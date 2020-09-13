@@ -8,10 +8,14 @@
 
 #import "LoginViewController.h"
 
+// initialize functions
+void recoverEmail(void);
+
+
 @interface LoginViewController ()
 
 
-//-(void)recoverEmail()
+
 
 @end
 
@@ -21,6 +25,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    //get user Email from db and set as user email
+    _userEmail = @"userEmail@email.com";
 }
 
 
@@ -30,16 +36,18 @@
     UIAlertController* forgotPinAlert = [[UIAlertController alloc] init]; //create alert object
     
     //set up alert
+    NSString* myEmailMessage = [[NSString alloc] initWithFormat:@"Do you want us to send you a pin recovery email to %@", _userEmail];
+    
     [forgotPinAlert setTitle:@"Pin recovery"];
-    [forgotPinAlert setMessage:@"Do you want us to send you a pin recovery email?"];
+    [forgotPinAlert setMessage:myEmailMessage];
     [forgotPinAlert modalPresentationStyle];
     
-    // run send recovery email function
     
     //create alert action resend email
     UIAlertAction* resendEmailAction = [UIAlertAction actionWithTitle:@"Send recovery email" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
         // write action code here
-        NSLog(@"Recovery email sent");
+        NSLog(@"Recovery email send Action clicked");
+        recoverEmail();
     }];
     
 
@@ -61,9 +69,9 @@
 
 
 
-//-(void)recoverEmail(){
-//
-//}
+void recoverEmail(){
+    NSLog(@"ran recovery email function");
+}
 
 /*
 #pragma mark - Navigation
