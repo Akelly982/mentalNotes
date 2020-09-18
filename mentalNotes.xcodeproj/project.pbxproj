@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C917E728250DC6C600FD38D5 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = C917E727250DC6C600FD38D5 /* Note.m */; };
-		C917E730250DE2C200FD38D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C917E72F250DE2C200FD38D5 /* GoogleService-Info.plist */; };
 		C917E739250E003400FD38D5 /* FirstStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C917E738250E003400FD38D5 /* FirstStartViewController.m */; };
 		C917E73C250E004B00FD38D5 /* FirstStart2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C917E73B250E004B00FD38D5 /* FirstStart2ViewController.m */; };
 		C917E73F250E005F00FD38D5 /* CreateNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C917E73E250E005F00FD38D5 /* CreateNoteViewController.m */; };
@@ -26,6 +25,8 @@
 		C96AB74E250C6D080004761E /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96AB74D250C6D080004761E /* HomeTableViewController.m */; };
 		C96AB751250C6D1A0004761E /* NotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96AB750250C6D1A0004761E /* NotesTableViewController.m */; };
 		C96AB754250C76400004761E /* MainUITabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96AB753250C76400004761E /* MainUITabBarController.m */; };
+		C9CEA6EF25145D83004611A7 /* DbManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CEA6EE25145D83004611A7 /* DbManager.m */; };
+		C9CEA6F225145DBC004611A7 /* TempDb.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CEA6F125145DBC004611A7 /* TempDb.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,6 @@
 		C917E726250DC6C600FD38D5 /* Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		C917E727250DC6C600FD38D5 /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		C917E72D250DCB6200FD38D5 /* Note+PrivateProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Note+PrivateProperty.h"; sourceTree = "<group>"; };
-		C917E72F250DE2C200FD38D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C917E737250E003400FD38D5 /* FirstStartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstStartViewController.h; sourceTree = "<group>"; };
 		C917E738250E003400FD38D5 /* FirstStartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstStartViewController.m; sourceTree = "<group>"; };
 		C917E73A250E004B00FD38D5 /* FirstStart2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstStart2ViewController.h; sourceTree = "<group>"; };
@@ -84,6 +84,10 @@
 		C96AB750250C6D1A0004761E /* NotesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotesTableViewController.m; sourceTree = "<group>"; };
 		C96AB752250C76400004761E /* MainUITabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainUITabBarController.h; sourceTree = "<group>"; };
 		C96AB753250C76400004761E /* MainUITabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainUITabBarController.m; sourceTree = "<group>"; };
+		C9CEA6ED25145D83004611A7 /* DbManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbManager.h; sourceTree = "<group>"; };
+		C9CEA6EE25145D83004611A7 /* DbManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbManager.m; sourceTree = "<group>"; };
+		C9CEA6F025145DBC004611A7 /* TempDb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TempDb.h; sourceTree = "<group>"; };
+		C9CEA6F125145DBC004611A7 /* TempDb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TempDb.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +128,6 @@
 		C917E72E250DDEC900FD38D5 /* firebase */ = {
 			isa = PBXGroup;
 			children = (
-				C917E72F250DE2C200FD38D5 /* GoogleService-Info.plist */,
 			);
 			path = firebase;
 			sourceTree = "<group>";
@@ -152,7 +155,7 @@
 		C96AB70C250C69710004761E /* mentalNotes */ = {
 			isa = PBXGroup;
 			children = (
-				C917E72E250DDEC900FD38D5 /* firebase */,
+				C9CEA6EC25145D36004611A7 /* database */,
 				C917E725250DC66B00FD38D5 /* classes */,
 				C96AB755250C764D0004761E /* controllers */,
 				C96AB742250C6A500004761E /* scenes */,
@@ -217,6 +220,18 @@
 				C96AB753250C76400004761E /* MainUITabBarController.m */,
 			);
 			path = controllers;
+			sourceTree = "<group>";
+		};
+		C9CEA6EC25145D36004611A7 /* database */ = {
+			isa = PBXGroup;
+			children = (
+				C917E72E250DDEC900FD38D5 /* firebase */,
+				C9CEA6ED25145D83004611A7 /* DbManager.h */,
+				C9CEA6EE25145D83004611A7 /* DbManager.m */,
+				C9CEA6F025145DBC004611A7 /* TempDb.h */,
+				C9CEA6F125145DBC004611A7 /* TempDb.m */,
+			);
+			path = database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,7 +338,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C96AB71D250C69730004761E /* LaunchScreen.storyboard in Resources */,
-				C917E730250DE2C200FD38D5 /* GoogleService-Info.plist in Resources */,
 				C96AB71A250C69730004761E /* Assets.xcassets in Resources */,
 				C96AB718250C69710004761E /* Main.storyboard in Resources */,
 			);
@@ -357,6 +371,8 @@
 				C96AB70F250C69710004761E /* AppDelegate.m in Sources */,
 				C96AB720250C69730004761E /* main.m in Sources */,
 				C917E739250E003400FD38D5 /* FirstStartViewController.m in Sources */,
+				C9CEA6EF25145D83004611A7 /* DbManager.m in Sources */,
+				C9CEA6F225145DBC004611A7 /* TempDb.m in Sources */,
 				C917E73F250E005F00FD38D5 /* CreateNoteViewController.m in Sources */,
 				C96AB751250C6D1A0004761E /* NotesTableViewController.m in Sources */,
 				C96AB74E250C6D080004761E /* HomeTableViewController.m in Sources */,

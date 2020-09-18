@@ -23,8 +23,11 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    _notesData = @[@"tempData",@"tempDatazzzz",@"myNOtes",@"Notey note notes",@"awsome Note"];
-    //_notesDataValue = @[@1,@8,@5,@4,@8];  //numeric values must be wraped into NSNumbers  // seems to cause a crash
+    DbManager* db = [[DbManager alloc]init];
+    _notesData = [db getNotes];
+    
+    //_notesData = @[@"tempData",@"tempDatazzzz",@"myNOtes",@"Notey note notes",@"awsome Note"];
+    
     
 }
 
@@ -54,8 +57,8 @@
     }
     
     //add data
-    [[cell textLabel] setText:[_notesData objectAtIndex:[indexPath row]]];
-    [[cell textLabel] setText:[_notesDataValue objectAtIndex:[indexPath row]]];
+    [[cell textLabel] setText:[[_notesData objectAtIndex:[indexPath row]]getNote]];  //getNote here is a method of the Note class (returns strings)
+    
     
     return cell;
 }

@@ -22,13 +22,22 @@
     return self;
 }
 
-
+- (instancetype) initWithNote: (NSString*) myNote   moodValue : (int) myMoodVal   andDate : (NSDate*) myDate{
+    self = [super init];
+       if (self) {
+           _note = myNote;
+           _mood = myMoodVal;
+           _date = myDate;
+       }
+    return self;
+}
 
 
 // getters and setters for private variables
-- (NSString*)getNote{
-    return [self note];
+- (NSString*) getNote{
+    return _note;
 }
+
 - (void) setNote: (NSString*) note{
     _note = note;
 }

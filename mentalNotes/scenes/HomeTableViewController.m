@@ -23,7 +23,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    _homeData = @[@"note title", @"note xyz",@"noteIloc",@"notey note note",@"floaty mc float float"];
+    DbManager* db = [[DbManager alloc]init];
+    _homeData = [db getNotesRecent:10];
+    
+    //_homeData = @[@"note title", @"note xyz",@"noteIloc",@"notey note note",@"floaty mc float float"];
 }
 
 #pragma mark - Table view data source
@@ -59,7 +62,7 @@
     // add data
     // cell class already exists
     //      cell              set text using _dataArray at current indexPath (which row we are at)
-    [[cell textLabel] setText:[_homeData objectAtIndex:[indexPath row]]];
+    [[cell textLabel] setText:[[_homeData objectAtIndex:[indexPath row]] getNote]];
     return cell;
 }
 
