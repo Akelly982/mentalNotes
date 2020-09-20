@@ -1,8 +1,8 @@
 //
-//  FirstStart2ViewController.h
+//  RedViewController.h
 //  mentalNotes
 //
-//  Created by Aidan Kelly on 13/9/20.
+//  Created by Aidan Kelly on 20/9/20.
 //  Copyright © 2020 Aidan Kelly. All rights reserved.
 //
 
@@ -10,13 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FirstStart2ViewController : UIViewController
-
-
-
-
-
--(void)fromFirstStart2;
+@interface RedViewController : UIViewController
 
 @end
 

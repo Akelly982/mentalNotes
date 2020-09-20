@@ -12,7 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CreateNoteViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *noteTextField;
+
+@property NSString* userNote; 
+@property (weak, nonatomic) IBOutlet UITextField *userNoteTextField;
+@property (weak, nonatomic) IBOutlet UIButton *continueBtn;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *tempBtn;
+
 
 @end
 

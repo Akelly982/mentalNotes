@@ -7,14 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DbManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LoginViewController : UIViewController
 
 @property NSString* login;
+@property DbManager* myDb;
+@property int userEnteredPin;
 
-@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+@property (weak, nonatomic) IBOutlet UITextField *myPinTextField;
+@property (weak, nonatomic) IBOutlet UIButton *myLoginBtn;
 @property (weak, nonatomic) IBOutlet UIButton *forgotPinBtn;
 
 @property NSString* userEmail;

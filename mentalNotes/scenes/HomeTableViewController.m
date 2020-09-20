@@ -7,6 +7,8 @@
 //
 
 #import "HomeTableViewController.h"
+#import "BlueViewController.h"
+
 
 @interface HomeTableViewController ()
 
@@ -28,6 +30,27 @@
     
     //_homeData = @[@"note title", @"note xyz",@"noteIloc",@"notey note note",@"floaty mc float float"];
 }
+
+
+
+// SETTING UP UNWIND
+//*sourceViewController is where you are coming back from
+- (IBAction)unwindToHomeVc:(UIStoryboardSegue *)unwindSegue {
+    UIViewController *sourceViewController = unwindSegue.sourceViewController;
+    // Use data from the view controller which initiated the unwind segue
+
+    // has this property been implemented
+    if ([sourceViewController respondsToSelector:@selector(methodInBlue)]){ //dont foget to import the corresponding VCheader
+    // i know that i am coming back from the pink view controller
+    NSLog(@"Returned from Blue VC");
+    }
+};
+
+
+
+
+
+
 
 #pragma mark - Table view data source
 

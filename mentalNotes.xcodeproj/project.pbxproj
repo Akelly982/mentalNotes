@@ -12,6 +12,8 @@
 		C917E73C250E004B00FD38D5 /* FirstStart2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C917E73B250E004B00FD38D5 /* FirstStart2ViewController.m */; };
 		C917E73F250E005F00FD38D5 /* CreateNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C917E73E250E005F00FD38D5 /* CreateNoteViewController.m */; };
 		C917E742250E006C00FD38D5 /* CreateNote2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C917E741250E006C00FD38D5 /* CreateNote2ViewController.m */; };
+		C9605FA82516CB500044A2A5 /* RedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9605FA72516CB500044A2A5 /* RedViewController.m */; };
+		C9605FAF2516CB6E0044A2A5 /* BlueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9605FAE2516CB6E0044A2A5 /* BlueViewController.m */; };
 		C96AB70F250C69710004761E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C96AB70E250C69710004761E /* AppDelegate.m */; };
 		C96AB712250C69710004761E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C96AB711250C69710004761E /* SceneDelegate.m */; };
 		C96AB718250C69710004761E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C96AB716250C69710004761E /* Main.storyboard */; };
@@ -58,6 +60,10 @@
 		C917E73E250E005F00FD38D5 /* CreateNoteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateNoteViewController.m; sourceTree = "<group>"; };
 		C917E740250E006C00FD38D5 /* CreateNote2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateNote2ViewController.h; sourceTree = "<group>"; };
 		C917E741250E006C00FD38D5 /* CreateNote2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateNote2ViewController.m; sourceTree = "<group>"; };
+		C9605FA62516CB500044A2A5 /* RedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedViewController.h; sourceTree = "<group>"; };
+		C9605FA72516CB500044A2A5 /* RedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedViewController.m; sourceTree = "<group>"; };
+		C9605FAD2516CB6E0044A2A5 /* BlueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueViewController.h; sourceTree = "<group>"; };
+		C9605FAE2516CB6E0044A2A5 /* BlueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueViewController.m; sourceTree = "<group>"; };
 		C96AB70A250C69710004761E /* mentalNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mentalNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96AB70D250C69710004761E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C96AB70E250C69710004761E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -132,6 +138,17 @@
 			path = firebase;
 			sourceTree = "<group>";
 		};
+		C9605FA52516CB360044A2A5 /* testScenes */ = {
+			isa = PBXGroup;
+			children = (
+				C9605FA62516CB500044A2A5 /* RedViewController.h */,
+				C9605FA72516CB500044A2A5 /* RedViewController.m */,
+				C9605FAD2516CB6E0044A2A5 /* BlueViewController.h */,
+				C9605FAE2516CB6E0044A2A5 /* BlueViewController.m */,
+			);
+			path = testScenes;
+			sourceTree = "<group>";
+		};
 		C96AB701250C69710004761E = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +210,7 @@
 		C96AB742250C6A500004761E /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C9605FA52516CB360044A2A5 /* testScenes */,
 				C96AB746250C6B120004761E /* LoginViewController.h */,
 				C96AB747250C6B120004761E /* LoginViewController.m */,
 				C96AB749250C6CEE0004761E /* StatsViewController.h */,
@@ -367,11 +385,13 @@
 				C917E742250E006C00FD38D5 /* CreateNote2ViewController.m in Sources */,
 				C917E728250DC6C600FD38D5 /* Note.m in Sources */,
 				C96AB748250C6B120004761E /* LoginViewController.m in Sources */,
+				C9605FAF2516CB6E0044A2A5 /* BlueViewController.m in Sources */,
 				C96AB74B250C6CEE0004761E /* StatsViewController.m in Sources */,
 				C96AB70F250C69710004761E /* AppDelegate.m in Sources */,
 				C96AB720250C69730004761E /* main.m in Sources */,
 				C917E739250E003400FD38D5 /* FirstStartViewController.m in Sources */,
 				C9CEA6EF25145D83004611A7 /* DbManager.m in Sources */,
+				C9605FA82516CB500044A2A5 /* RedViewController.m in Sources */,
 				C9CEA6F225145DBC004611A7 /* TempDb.m in Sources */,
 				C917E73F250E005F00FD38D5 /* CreateNoteViewController.m in Sources */,
 				C96AB751250C6D1A0004761E /* NotesTableViewController.m in Sources */,

@@ -7,6 +7,8 @@
 //
 
 #import "LoginViewController.h"
+#import "FirstStart2ViewController.h"
+
 
 // initialize functions
 void recoverEmail(void);
@@ -25,12 +27,52 @@ void recoverEmail(void);
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //get user Email from db and set as user email
-    _userEmail = @"userEmail@email.com";
+    
+    //connect to db
+    _myDb = [[DbManager alloc]init];
+    
+    if ([_myDb getAccountExists]){
+        //get user email from db and set to email
+        _userEmail = [_myDb getAccountEmail];
+    }
+
+    
+    /*
+     ============== Important ==============
+     this is for the UITextField: hide keyboard by touching somewhere else using gestures, also create the dismisskeyboard method
+     */
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:gestureRecognizer];
+    gestureRecognizer.cancelsTouchesInView = NO;
+    
+}
+
+//dismiss keyboard method
+- (void)dismissKeyboard
+{
+     [self.view endEditing:YES];
+}
+
+
+- (IBAction)myPinFunc:(id)sender {
+    NSString* temp = [_myPinTextField text];  //convert to NSString
+    _userEnteredPin = [temp intValue]; //use the NSSstring through method intVal to get as int
+    NSLog(@"User Entered pin: %i", _userEnteredPin);
+}
+
+- (IBAction)myLoginFunc:(id)sender {
+    if (_userEnteredPin == [_myDb getAccountPin]){
+        //initiate segue if true
+        [self performSegueWithIdentifier:@"fromLogin0" sender:nil];
+    }else{
+        NSLog(@"invalid password");
+    }
 }
 
 
 
+
+// ALERT FUNCTION for forgot pin
 - (IBAction)forgotPinBtnClicked:(id)sender {
     //create an ui alert controller
     UIAlertController* forgotPinAlert = [[UIAlertController alloc] init]; //create alert object
@@ -72,6 +114,25 @@ void recoverEmail(void);
 void recoverEmail(){
     NSLog(@"ran recovery email function");
 }
+
+
+
+//Unwind From FirstStart
+// SETTING UP UNWIND
+//*sourceViewController is where you are coming back from
+- (IBAction)unwindToLoginVc:(UIStoryboardSegue *)unwindSegue {
+    UIViewController *sourceViewController = unwindSegue.sourceViewController;
+    // Use data from the view controller which initiated the unwind segue
+
+    // has this property been implemented
+    if ([sourceViewController respondsToSelector:@selector(fromFirstStart2)]){ //dont foget to import the corresponding VCheader
+    // i know that i am coming back from the pink view controller
+    NSLog(@"Returned from FirstStart2");
+    }
+};
+
+
+
 
 /*
 #pragma mark - Navigation

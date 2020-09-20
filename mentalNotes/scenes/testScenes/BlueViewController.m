@@ -1,36 +1,30 @@
 //
-//  FirstStart2ViewController.m
+//  BlueViewController.m
 //  mentalNotes
 //
-//  Created by Aidan Kelly on 13/9/20.
+//  Created by Aidan Kelly on 20/9/20.
 //  Copyright © 2020 Aidan Kelly. All rights reserved.
 //
 
-#import "FirstStart2ViewController.h"
+#import "BlueViewController.h"
 
-@interface FirstStart2ViewController ()
+@interface BlueViewController ()
 
 @end
 
-@implementation FirstStart2ViewController
+@implementation BlueViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+
+- (void)methodInBlue{
     
 }
 
 
-
-
-
-
-
-
-// I exist/WhoAmI method for unwind
-- (void)fromFirstStart2{
-    
-}
 
 /*
 #pragma mark - Navigation

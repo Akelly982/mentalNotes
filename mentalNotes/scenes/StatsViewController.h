@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface StatsViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *daysInputTextField;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -16,10 +16,27 @@ NS_ASSUME_NONNULL_BEGIN
 // this class should have consistent callable methods to getting data from the db
 
 
+@property TempDb* myDb;
 
+
+// userAccount
+- (BOOL) getAccountExists;
+- (int) getAccountPin;
+- (NSString*)getAccountEmail;
+
+
+- (void) updateAccountExists : (bool) myAccountBool;
+- (void) updateAccountPin: (int) myPin;
+- (void) updateAccountEmail :(NSString*) userEmail;
+
+
+
+// notes
 - (NSArray*) getNotes;
-
 - (NSArray*) getNotesRecent : (int) numItems;
+
+
+
 
 
 @end

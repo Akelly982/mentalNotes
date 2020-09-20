@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CreateNote2ViewController : UIViewController
 
+
+@property NSString* userNote; //recieves the userNote value from segue
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

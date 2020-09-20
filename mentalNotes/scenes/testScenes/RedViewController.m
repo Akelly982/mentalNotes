@@ -1,35 +1,22 @@
 //
-//  FirstStart2ViewController.m
+//  RedViewController.m
 //  mentalNotes
 //
-//  Created by Aidan Kelly on 13/9/20.
+//  Created by Aidan Kelly on 20/9/20.
 //  Copyright © 2020 Aidan Kelly. All rights reserved.
 //
 
-#import "FirstStart2ViewController.h"
+#import "RedViewController.h"
 
-@interface FirstStart2ViewController ()
+@interface RedViewController ()
 
 @end
 
-@implementation FirstStart2ViewController
+@implementation RedViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-}
-
-
-
-
-
-
-
-
-// I exist/WhoAmI method for unwind
-- (void)fromFirstStart2{
-    
 }
 
 /*

@@ -18,7 +18,6 @@
         
         _TDatabase = [[NSDictionary alloc]init];
         
-        
         _TDatabase = @{
             @0 : @{@"Note" : @"started project XYZ", @"moodVal": @8 , @"date" : @"08,02,2020"},
             @1 : @{@"Note" : @"Created a box", @"moodVal": @2 , @"date" : @"02,02,2020"},
@@ -49,9 +48,40 @@
         };
         
         
-        
+        _accountExists = true;
+        _accountPin = 5555;
+        _userEmail = @"user@email.com";
     }
     return self;
+}
+
+
+
+//update
+-(void)updateAccountExists:(BOOL)myAccountBool{
+    _accountExists = myAccountBool;
+}
+
+- (void)updateAccountPin:(int)myPin{
+    _accountPin = myPin;
+}
+
+- (void)updateUserEmail:(NSString *)myEmail{
+    _userEmail = myEmail;
+}
+
+
+//getters
+-(BOOL)getAccountExists{
+    return _accountExists;
+}
+
+- (int)getAccountPin{
+    return _accountPin;
+}
+
+- (NSString *)getUserEmail{
+    return _userEmail;
 }
 
 
