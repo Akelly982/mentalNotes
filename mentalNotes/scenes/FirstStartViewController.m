@@ -17,7 +17,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    
+    //code for gesture to remove keyboard when click away from keyboard
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:gestureRecognizer];
+    gestureRecognizer.cancelsTouchesInView = NO;
+    
 }
+
+//dismiss keyboard method
+- (void)dismissKeyboard
+{
+     [self.view endEditing:YES];
+}
+
+
+
+
 
 /*
 #pragma mark - Navigation
