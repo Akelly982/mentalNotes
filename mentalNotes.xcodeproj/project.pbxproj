@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4734E4D25186FF90026FA20 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4734E4C25186FF90026FA20 /* HomeTableViewCell.m */; };
 		C917E728250DC6C600FD38D5 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = C917E727250DC6C600FD38D5 /* Note.m */; };
 		C917E739250E003400FD38D5 /* FirstStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C917E738250E003400FD38D5 /* FirstStartViewController.m */; };
 		C917E73C250E004B00FD38D5 /* FirstStart2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C917E73B250E004B00FD38D5 /* FirstStart2ViewController.m */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C4734E4B25186FF90026FA20 /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		C4734E4C25186FF90026FA20 /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		C917E726250DC6C600FD38D5 /* Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		C917E727250DC6C600FD38D5 /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		C917E72D250DCB6200FD38D5 /* Note+PrivateProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Note+PrivateProperty.h"; sourceTree = "<group>"; };
@@ -121,6 +124,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C4734E4A25186F800026FA20 /* cellClasses */ = {
+			isa = PBXGroup;
+			children = (
+				C4734E4B25186FF90026FA20 /* HomeTableViewCell.h */,
+				C4734E4C25186FF90026FA20 /* HomeTableViewCell.m */,
+			);
+			path = cellClasses;
+			sourceTree = "<group>";
+		};
 		C917E725250DC66B00FD38D5 /* classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +222,7 @@
 		C96AB742250C6A500004761E /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				C4734E4A25186F800026FA20 /* cellClasses */,
 				C9605FA52516CB360044A2A5 /* testScenes */,
 				C96AB746250C6B120004761E /* LoginViewController.h */,
 				C96AB747250C6B120004761E /* LoginViewController.m */,
@@ -392,6 +405,7 @@
 				C917E739250E003400FD38D5 /* FirstStartViewController.m in Sources */,
 				C9CEA6EF25145D83004611A7 /* DbManager.m in Sources */,
 				C9605FA82516CB500044A2A5 /* RedViewController.m in Sources */,
+				C4734E4D25186FF90026FA20 /* HomeTableViewCell.m in Sources */,
 				C9CEA6F225145DBC004611A7 /* TempDb.m in Sources */,
 				C917E73F250E005F00FD38D5 /* CreateNoteViewController.m in Sources */,
 				C96AB751250C6D1A0004761E /* NotesTableViewController.m in Sources */,

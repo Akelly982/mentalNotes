@@ -64,6 +64,21 @@
     date = _date;
 }
 
+- (NSString *)getDateAsNSString{
+    NSString* holder = [[NSString alloc]init];
+    
+    // use formatter to convert date
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"dd:MM:YYYY"];
+    // user formatter to set to date
+    holder = [formatter stringFromDate:_date];
+    
+    return holder;
+}
+
+
+
+
 @end
 
 

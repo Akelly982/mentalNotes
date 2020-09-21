@@ -29,6 +29,11 @@
     _homeData = [db getNotesRecent:10];
     
     //_homeData = @[@"note title", @"note xyz",@"noteIloc",@"notey note note",@"floaty mc float float"];
+    
+    
+    //set up colors
+    // init with RGB (they are of type CGFLOAT...)
+    _myRed = [[UIColor alloc]initWithRed:255 green:38 blue:0 alpha:1];
 }
 
 
@@ -75,18 +80,31 @@
     // get the identifier for the cell
     static NSString* myCellIdenifier = @"homeCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:myCellIdenifier forIndexPath:indexPath];
+    HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:myCellIdenifier forIndexPath:indexPath];
     
     // Configure the cell...
     if (cell == nil){  // if it is a new cell (not yet loaded)
         // init with default sytle and cellId
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:myCellIdenifier];
+        cell = [[HomeTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:myCellIdenifier];
     }
     // add data
     // cell class already exists
     //      cell              set text using _dataArray at current indexPath (which row we are at)
-    [[cell textLabel] setText:[[_homeData objectAtIndex:[indexPath row]] getNote]];
+//    [[cell textLabel] setText:[[_homeData objectAtIndex:[indexPath row]] getNote]];
+    
+    [[cell noteLabel] setText:[[_homeData objectAtIndex:[indexPath row]] getNote]];
+    
+    
+    [[cell dateLabel] setText:[[_homeData objectAtIndex:[indexPath row]] getDateAsNSString]];
+    
+    //moodImage setBKG expects a UIColor
+    [[cell moodImageView] setBackgroundColor: _myRed];
+    
+    
     return cell;
+    
+//
+    
 }
 
 
@@ -96,6 +114,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"Row selected - num row is: %li", (long)[indexPath row]);
 }
+
+
 
 
 

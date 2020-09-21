@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void) setMood: (int)mood;
 
 -(NSDate*)getDate;
+-(NSString*)getDateAsNSString;
 -(void) setDate: (NSDate*)date;
 
 - (instancetype)initWithNote: (NSString*) myNote   moodValue : (int) myMoodVal   andDate : (NSDate*) myDate ;
