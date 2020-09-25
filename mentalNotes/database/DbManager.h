@@ -30,10 +30,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) updateAccountEmail :(NSString*) userEmail;
 
 
-
 // notes
 - (NSArray*) getNotes;
 - (NSArray*) getNotesRecent : (int) numItems;
+
+- (void) addNote : (Note*) noteToAdd;
 
 
 

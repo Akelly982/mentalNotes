@@ -7,6 +7,7 @@
 //
 
 #import "CreateNote2ViewController.h"
+#import "DbManager.h"
 
 @interface CreateNote2ViewController ()
 
@@ -18,7 +19,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSLog(@"%@",_userNote);
+    NSLog(@"%@",_userNote); //this is set on segue
+    _currentDate = [NSDate date];  // should get current date and time
+    
+    // convert current date to just date
+    NSDateFormatter* dateFormater = [[NSDateFormatter alloc]init];
+    [dateFormater setDateFormat:@"dd/MM/yyyy"];
+    //convert date to string to get correct format
+    NSString* myDateStr = [dateFormater stringFromDate:_currentDate];
+    //convert string back into date datatype with the correct format;
+    _currentDate = [dateFormater dateFromString:myDateStr];
+    
     
     
     //code for gesture to remove keyboard when click away from keyboard
@@ -35,6 +46,35 @@
      [self.view endEditing:YES];
 }
 
+- (IBAction)createNoteButton:(id)sender {
+    NSLog(@"Create Note button clicked");
+    //get values
+    NSString* myMood = [_userMoodVal text]; //label so it comes as string
+    bool myAdvisor1 = [_userAdvisor1 state];
+    bool myAdvisor2 = [_userAdvisor2 state];
+    
+    //check to make sure they are correct
+    int myMoodVal = [myMood intValue];
+    
+    //make is so that mood val is between 0 and 10
+    if (myMoodVal < 0 || myMoodVal > 10 ){  //allows for early skip if in range else check
+        if (myMoodVal < 0){
+            myMoodVal = 0;
+        }else{
+            myMoodVal = 10;
+        }
+    }
+    
+    //create new note
+    Note* newNote = [[Note alloc]initWithNote:_userNote moodValue:myMoodVal date:_currentDate advisor1:myAdvisor1 andAdvisor2:myAdvisor2];
+    
+    
+    //connect to db
+    DbManager* db = [[DbManager alloc]init];
+    
+    //send to db
+    [db addNote:newNote];
+}
 
 
 

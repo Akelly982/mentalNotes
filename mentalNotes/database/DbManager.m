@@ -49,7 +49,7 @@
 
 
 
-// update db data
+// update account
 - (void)updateAccountExists:(bool)myAccountBool{
     [_myDb updateAccountExists:myAccountBool];
 }
@@ -64,7 +64,7 @@
 
 
 
-//getter
+//get account
 - (BOOL)getAccountExists{
     return [_myDb getAccountExists];
 }
@@ -74,6 +74,13 @@
 
 - (NSString *)getAccountEmail{
     return [_myDb getUserEmail];
+}
+
+
+
+// add New Note
+- (void)addNote:(Note *)noteToAdd{
+    [_myDb addNote:noteToAdd];
 }
 
 

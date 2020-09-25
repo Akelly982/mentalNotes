@@ -11,6 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+
 @interface TempDb : NSObject
 
 @property NSDictionary* TDatabase;
@@ -22,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray*) getNotes;
 - (NSArray*) getNotesRecent : (int) numNotes;
 
+- (void) addNote: (Note*) noteToInsert;
 
 // user account data
 - (BOOL)getAccountExists;
@@ -31,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)updateAccountExists: (BOOL) myAccountBool;
 - (void)updateAccountPin : (int) myPin;
 - (void)updateUserEmail : (NSString*) myEmail;
+
 
 @end
 

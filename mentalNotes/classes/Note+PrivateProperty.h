@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString* note;
 @property int mood;
 @property NSDate* date;
+@property bool advisor1;
+@property bool advisor2;
 
 
 

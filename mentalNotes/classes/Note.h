@@ -16,7 +16,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly) NSString* note;
 @property (readonly) int mood;
 @property (readonly) NSDate* date;
+@property (readonly) bool advisor1;
+@property (readonly) bool advisor2;
 
+
+
+- (instancetype)initWithNote: (NSString*) myNote   moodValue : (int) myMoodVal   date : (NSDate*) myDate  advisor1 : (bool) myAdvisor1   andAdvisor2 : (bool) myAdvisor2 ;
 
 
 //getters and setters 
@@ -30,7 +35,12 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSString*)getDateAsNSString;
 -(void) setDate: (NSDate*)date;
 
-- (instancetype)initWithNote: (NSString*) myNote   moodValue : (int) myMoodVal   andDate : (NSDate*) myDate ;
+-(bool)getAdvisor1;
+-(void)setAdvisor1:(bool)boolVal;
+
+-(bool)getAdvisor2;
+-(void)setAdvisor2:(bool)boolVal;
+
 
 
 @end

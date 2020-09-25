@@ -10,6 +10,7 @@
 #import "DbManager.h"
 #import "Note.h"
 #import "HomeTableViewCell.h"
+#import "myColors.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -18,8 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property NSArray* homeData;
 @property Note* selectedNote;
-
-@property UIColor* myRed;
+@property myColors* colors;
 
 
 //cell components

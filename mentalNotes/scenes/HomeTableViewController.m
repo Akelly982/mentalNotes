@@ -8,6 +8,7 @@
 
 #import "HomeTableViewController.h"
 #import "BlueViewController.h"
+#import "ShowNoteTableViewController.h"
 
 
 @interface HomeTableViewController ()
@@ -15,6 +16,11 @@
 @end
 
 @implementation HomeTableViewController
+
+    //****************NOTES VALUE REF****************
+        // numGoodNotes  == else
+        // numAverageNotes <=6
+        // numWorseNotes <=4
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,10 +36,11 @@
     
     //_homeData = @[@"note title", @"note xyz",@"noteIloc",@"notey note note",@"floaty mc float float"];
     
+    _colors = [[myColors alloc]init];
+    //test usingColor
+    //[[self colors] myRed];
     
-    //set up colors
-    // init with RGB (they are of type CGFLOAT...)
-    _myRed = [[UIColor alloc]initWithRed:255 green:38 blue:0 alpha:1];
+    
 }
 
 
@@ -98,7 +105,15 @@
     [[cell dateLabel] setText:[[_homeData objectAtIndex:[indexPath row]] getDateAsNSString]];
     
     //moodImage setBKG expects a UIColor
-    [[cell moodImageView] setBackgroundColor: _myRed];
+    int myMood = [[_homeData objectAtIndex:[indexPath row]] getMood];
+    if (myMood <= 4){
+        [[cell moodImageView] setBackgroundColor: [[self colors]myRed]];
+    }else if (myMood <= 6){
+        [[cell moodImageView] setBackgroundColor: [[self colors]myBlue]];
+    }else {
+        [[cell moodImageView] setBackgroundColor: [[self colors]myGreen]];
+    }
+    
     
     
     return cell;
@@ -111,8 +126,35 @@
     //@@This row needs to be added in by on your own@@
     // user selected a row and this is which one it is
     // what will hapen when the user taps this row
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"Row selected - num row is: %li", (long)[indexPath row]);
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    NSLog(@"Row selected - num row is: %li", (long)[indexPath row]);
+//    _selectedNote = [_homeData objectAtIndex:[indexPath row]];
+//}
+
+
+
+
+
+// TEACHER ALEX SEGUE USING DESTINATION CLASS AS ID
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    
+//    if ([myObject isKindOfClass:[AnObject class]])
+    if([[segue destinationViewController] isKindOfClass:[ShowNoteTableViewController class]]){
+        NSLog(@"Segueing to ShowNote !");
+        //get the contact from the table view (don't forget to create the outlet for contactsTableView in the ContactsTableViewController.h)
+        NSInteger selectedRow = [[[self homeTableView] indexPathForSelectedRow] row]; //use tableView to get row selected
+        _selectedNote = [[self homeData] objectAtIndex:selectedRow];
+        //get the destination view controller
+        ShowNoteTableViewController* showNoteTableViewController = [segue destinationViewController];
+        [showNoteTableViewController setNote:_selectedNote]; // note in next view = selectedNote
+        
+    }
+        
+    
 }
 
 

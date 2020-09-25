@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Note.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,7 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @property NSString* userNote; //recieves the userNote value from segue
+@property NSDate* currentDate;
 
+@property (weak, nonatomic) IBOutlet UITextField *userMoodVal;
+@property (weak, nonatomic) IBOutlet UISwitch *userAdvisor1;
+@property (weak, nonatomic) IBOutlet UISwitch *userAdvisor2;
 
 
 @end

@@ -28,6 +28,8 @@
 		C96AB74E250C6D080004761E /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96AB74D250C6D080004761E /* HomeTableViewController.m */; };
 		C96AB751250C6D1A0004761E /* NotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96AB750250C6D1A0004761E /* NotesTableViewController.m */; };
 		C96AB754250C76400004761E /* MainUITabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96AB753250C76400004761E /* MainUITabBarController.m */; };
+		C96E90B4251DDBE8008935EB /* ShowNoteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96E90B3251DDBE8008935EB /* ShowNoteTableViewController.m */; };
+		C96E90BA251DE745008935EB /* myColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C96E90B9251DE745008935EB /* myColors.m */; };
 		C9CEA6EF25145D83004611A7 /* DbManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CEA6EE25145D83004611A7 /* DbManager.m */; };
 		C9CEA6F225145DBC004611A7 /* TempDb.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CEA6F125145DBC004611A7 /* TempDb.m */; };
 /* End PBXBuildFile section */
@@ -93,6 +95,10 @@
 		C96AB750250C6D1A0004761E /* NotesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotesTableViewController.m; sourceTree = "<group>"; };
 		C96AB752250C76400004761E /* MainUITabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainUITabBarController.h; sourceTree = "<group>"; };
 		C96AB753250C76400004761E /* MainUITabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainUITabBarController.m; sourceTree = "<group>"; };
+		C96E90B2251DDBE8008935EB /* ShowNoteTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowNoteTableViewController.h; sourceTree = "<group>"; };
+		C96E90B3251DDBE8008935EB /* ShowNoteTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowNoteTableViewController.m; sourceTree = "<group>"; };
+		C96E90B8251DE745008935EB /* myColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myColors.h; sourceTree = "<group>"; };
+		C96E90B9251DE745008935EB /* myColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myColors.m; sourceTree = "<group>"; };
 		C9CEA6ED25145D83004611A7 /* DbManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbManager.h; sourceTree = "<group>"; };
 		C9CEA6EE25145D83004611A7 /* DbManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbManager.m; sourceTree = "<group>"; };
 		C9CEA6F025145DBC004611A7 /* TempDb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TempDb.h; sourceTree = "<group>"; };
@@ -139,6 +145,8 @@
 				C917E726250DC6C600FD38D5 /* Note.h */,
 				C917E72D250DCB6200FD38D5 /* Note+PrivateProperty.h */,
 				C917E727250DC6C600FD38D5 /* Note.m */,
+				C96E90B8251DE745008935EB /* myColors.h */,
+				C96E90B9251DE745008935EB /* myColors.m */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -240,6 +248,8 @@
 				C917E73E250E005F00FD38D5 /* CreateNoteViewController.m */,
 				C917E740250E006C00FD38D5 /* CreateNote2ViewController.h */,
 				C917E741250E006C00FD38D5 /* CreateNote2ViewController.m */,
+				C96E90B2251DDBE8008935EB /* ShowNoteTableViewController.h */,
+				C96E90B3251DDBE8008935EB /* ShowNoteTableViewController.m */,
 			);
 			path = scenes;
 			sourceTree = "<group>";
@@ -395,6 +405,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96E90B4251DDBE8008935EB /* ShowNoteTableViewController.m in Sources */,
+				C96E90BA251DE745008935EB /* myColors.m in Sources */,
 				C917E742250E006C00FD38D5 /* CreateNote2ViewController.m in Sources */,
 				C917E728250DC6C600FD38D5 /* Note.m in Sources */,
 				C96AB748250C6B120004761E /* LoginViewController.m in Sources */,
