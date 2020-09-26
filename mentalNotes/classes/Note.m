@@ -22,7 +22,21 @@
     return self;
 }
 
-- (instancetype)initWithNote:(NSString *)myNote moodValue:(int)myMoodVal date:(NSDate *)myDate advisor1:(bool)myAdvisor1 andAdvisor2:(bool)myAdvisor2{
+- (instancetype)initWithNote: (NSString*) myNote   moodValue : (int) myMoodVal   date : (NSDate*) myDate  advisor1 : (bool) myAdvisor1   Advisor2 : (bool) myAdvisor2   andId : (int) myId{
+    self = [super init];
+       if (self) {
+           _note = myNote;
+           _mood = myMoodVal;
+           _date = myDate;
+           _advisor1 = myAdvisor1;
+           _advisor2 = myAdvisor2;
+           _myId = myId;
+       }
+    return self;
+}
+
+
+- (instancetype)initNoteForDb: (NSString*) myNote   moodValue : (int) myMoodVal   date : (NSDate*) myDate  advisor1 : (bool) myAdvisor1   Advisor2 : (bool) myAdvisor2{
     self = [super init];
        if (self) {
            _note = myNote;
@@ -37,6 +51,17 @@
 
 
 // getters and setters for private variables
+
+- (int)getId{
+    return _myId;
+}
+
+- (void)setId:(int)myId{
+    _myId = myId;
+}
+
+
+
 - (NSString*) getNote{
     return _note;
 }
@@ -44,8 +69,6 @@
 - (void) setNote: (NSString*) note{
     _note = note;
 }
-
-
 
 
 - (int)getMood{

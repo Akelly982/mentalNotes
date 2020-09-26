@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Note ()
 
+@property int myId;   //turns out id is a reserve word
 @property NSString* note;
 @property int mood;
 @property NSDate* date;

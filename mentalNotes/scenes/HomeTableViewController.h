@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DbManager.h"
 #import "Note.h"
-#import "HomeTableViewCell.h"
+#import "NoteTableViewCell.h"
 #import "myColors.h"
 
 

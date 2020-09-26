@@ -6,9 +6,9 @@
 //  Copyright © 2020 Aidan Kelly. All rights reserved.
 //
 
-#import "HomeTableViewCell.h"
+#import "NoteTableViewCell.h"
 
-@implementation HomeTableViewCell
+@implementation NoteTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

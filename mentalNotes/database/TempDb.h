@@ -23,8 +23,17 @@ NS_ASSUME_NONNULL_BEGIN
 // notes
 - (NSArray*) getNotes;
 - (NSArray*) getNotesRecent : (int) numNotes;
+- (NSArray*) getNotesGood;
+- (NSArray*) getNotesAverage;
+- (NSArray*) getNotesWorse;
+- (NSArray*) getNotesAdvisor1;
+- (NSArray*) getNotesAdvisor2;
 
 - (void) addNote: (Note*) noteToInsert;
+- (void) deleteNote: (Note*) noteToDelete;
+- (void) updateNote: (Note*) noteToUpdate;
+
+
 
 // user account data
 - (BOOL)getAccountExists;

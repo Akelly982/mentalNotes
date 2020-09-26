@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Note : NSObject
 
-//later on we will declarate this
+@property (readonly) int myId;
 @property (readonly) NSString* note;
 @property (readonly) int mood;
 @property (readonly) NSDate* date;
@@ -21,10 +21,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-- (instancetype)initWithNote: (NSString*) myNote   moodValue : (int) myMoodVal   date : (NSDate*) myDate  advisor1 : (bool) myAdvisor1   andAdvisor2 : (bool) myAdvisor2 ;
+- (instancetype)initWithNote: (NSString*) myNote   moodValue : (int) myMoodVal   date : (NSDate*) myDate  advisor1 : (bool) myAdvisor1   Advisor2 : (bool) myAdvisor2   andId : (int) myId;
+- (instancetype)initNoteForDb: (NSString*) myNote   moodValue : (int) myMoodVal   date : (NSDate*) myDate  advisor1 : (bool) myAdvisor1   Advisor2 : (bool) myAdvisor2;
 
+//getters and setters
+-(int) getId;
+-(void) setId: (int)myId;
 
-//getters and setters 
 -(NSString*)getNote;
 -(void) setNote: (NSString*)note;
 

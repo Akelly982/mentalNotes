@@ -50,8 +50,8 @@
     NSLog(@"Create Note button clicked");
     //get values
     NSString* myMood = [_userMoodVal text]; //label so it comes as string
-    bool myAdvisor1 = [_userAdvisor1 state];
-    bool myAdvisor2 = [_userAdvisor2 state];
+    bool myAdvisor1 = [_userAdvisor1 isOn];  // should return bool depending switch UI component
+    bool myAdvisor2 = [_userAdvisor2 isOn];
     
     //check to make sure they are correct
     int myMoodVal = [myMood intValue];
@@ -66,7 +66,7 @@
     }
     
     //create new note
-    Note* newNote = [[Note alloc]initWithNote:_userNote moodValue:myMoodVal date:_currentDate advisor1:myAdvisor1 andAdvisor2:myAdvisor2];
+    Note* newNote = [[Note alloc]initNoteForDb:_userNote moodValue:myMoodVal date:_currentDate advisor1:myAdvisor1 Advisor2:myAdvisor2];
     
     
     //connect to db

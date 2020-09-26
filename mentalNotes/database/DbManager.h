@@ -33,8 +33,15 @@ NS_ASSUME_NONNULL_BEGIN
 // notes
 - (NSArray*) getNotes;
 - (NSArray*) getNotesRecent : (int) numItems;
+- (NSArray*) getNotesGood;
+- (NSArray*) getNotesAverage;
+- (NSArray*) getNotesWorse;
+- (NSArray*) getNotesAdvisor1;
+- (NSArray*) getNotesAdvisor2;
 
 - (void) addNote : (Note*) noteToAdd;
+- (void) deleteNote : (Note*) noteToDelete;
+- (void) updateNote : (Note*) noteToUpdate;
 
 
 

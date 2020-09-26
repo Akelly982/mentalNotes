@@ -22,7 +22,7 @@
 }
 
 
-
+//**********GETNOTES*******************************
 
 - (NSArray *)getNotes{
     NSArray* myArray = [[NSArray alloc]init];
@@ -34,8 +34,6 @@
     return myArray;
 }
 
-
-
 - (NSArray*) getNotesRecent : (int) numItems{
     NSArray* myArray = [[NSArray alloc]init];
     
@@ -45,9 +43,88 @@
     return myArray;
 }
 
+- (NSArray *)getNotesGood{
+    NSArray* myArray = [[NSArray alloc]init];
+    
+    // get from temp Db
+    myArray = [_myDb getNotesGood];
+    
+    
+    return myArray;
+}
+
+- (NSArray *)getNotesAverage{
+    NSArray* myArray = [[NSArray alloc]init];
+    
+    // get from temp Db
+    myArray = [_myDb getNotesAverage];
+    
+    
+    return myArray;
+}
+
+- (NSArray *)getNotesWorse{
+    NSArray* myArray = [[NSArray alloc]init];
+    
+    // get from temp Db
+    myArray = [_myDb getNotesWorse];
+    
+    
+    return myArray;
+}
+
+- (NSArray *)getNotesAdvisor1{
+    NSArray* myArray = [[NSArray alloc]init];
+    
+    // get from temp Db
+    myArray = [_myDb getNotesAdvisor1];
+    
+    
+    return myArray;
+}
+
+- (NSArray *)getNotesAdvisor2{
+    NSArray* myArray = [[NSArray alloc]init];
+    
+    // get from temp Db
+    myArray = [_myDb getNotesAdvisor2];
+    
+    
+    return myArray;
+}
+
+//************************************************
 
 
 
+
+// add New Note
+- (void)addNote:(Note *)noteToAdd{
+    [_myDb addNote:noteToAdd];
+}
+
+
+//update note
+- (void)updateNote:(Note *)noteToUpdate{
+    [_myDb updateNote:noteToUpdate];
+}
+
+
+//delete note
+- (void)deleteNote:(Note *)noteToDelete{
+    [_myDb deleteNote:noteToDelete];
+}
+
+
+
+
+
+
+
+
+
+
+//EXCLUDING for ait ios project may add later
 
 // update account
 - (void)updateAccountExists:(bool)myAccountBool{
@@ -61,7 +138,6 @@
 - (void)updateAccountEmail:(NSString *)userEmail{
     
 }
-
 
 
 //get account
@@ -78,10 +154,6 @@
 
 
 
-// add New Note
-- (void)addNote:(Note *)noteToAdd{
-    [_myDb addNote:noteToAdd];
-}
 
 
 

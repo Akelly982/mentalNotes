@@ -7,6 +7,8 @@
 //
 
 #import "NotesTableViewController.h"
+#import "NoteCategoryTableViewController.h"  // note category view page
+#import "ShowNoteTableViewController.h"    //show note page
 
 @interface NotesTableViewController ()
 
@@ -30,12 +32,13 @@
     _db = [[DbManager alloc]init];
 
     
-    //set mood colors
+    //set mood ImageView colors
     _color = [[myColors alloc]init];
     [_goodNotesImageView setBackgroundColor: [_color myGreen]];
     [_averageNotesImageView setBackgroundColor: [_color myBlue]];
     [_worseNotesImageView setBackgroundColor: [_color myRed]];
-        
+    
+    
 }
 
 
@@ -67,31 +70,41 @@
     switch(index){
         case 1:
             NSLog(@"Good notes");
-            //_notesData = [_db getNotes];
+            //get noteArray for select category
+            _notesData = [_db getNotesGood];
+            //perform segue     whatever notesData is will be sent
+            [self performSegueWithIdentifier:@"fromNotes" sender:nil];
             break;
         case 2:
             NSLog(@"Average notes");
+            _notesData = [_db getNotesAverage];
+            [self performSegueWithIdentifier:@"fromNotes" sender:nil];
             break;
         case 3:
             NSLog(@"Worse notes");
+            _notesData = [_db getNotesWorse];
+            [self performSegueWithIdentifier:@"fromNotes" sender:nil];
             break;
         case 4:
             NSLog(@"Advisor 1 notes");
+            _notesData = [_db getNotesAdvisor1];
+            [self performSegueWithIdentifier:@"fromNotes" sender:nil];
             break;
         case 5:
             NSLog(@"Advisor 2 notes");
+            _notesData = [_db getNotesAdvisor2];
+            [self performSegueWithIdentifier:@"fromNotes" sender:nil];
             break;
         case 6:
-            NSLog(@"Show all notes");
+            NSLog(@"Show all notes");   //grab everything
             _notesData = [_db getNotes];
+            [self performSegueWithIdentifier:@"fromNotes" sender:nil];
             break;
         default:
             NSLog(@"default case hit");
     }
     
-    
-    
-    
+
     // REFERNECE CODE FOR SEGUE THROUGH CODE
     
 //
@@ -104,10 +117,46 @@
 //        }
 //    }
     
-    
-    
+
+}
+
+
+
+
+// TEACHER ALEX SEGUE USING DESTINATION CLASS AS ID
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+
+    // check destination HERE SHOULD ALWAYS BE THE SAME no matter what category
+    if([[segue destinationViewController] isKindOfClass:[NoteCategoryTableViewController class]]){
+        NSLog(@"preparing Segue for noteCategory");
+        //get the destination view controller and set data
+        NoteCategoryTableViewController* noteCategoryTVC = [segue destinationViewController];
+        [noteCategoryTVC setNoteArray:_notesData ]; // note in next view = selectedNote
+        
+    }
+        
     
 }
+
+
+// SETTING UP UNWIND
+//*sourceViewController is where you are coming back from
+- (IBAction)unwindToNotesVc:(UIStoryboardSegue *)unwindSegue {
+    UIViewController *sourceViewController = unwindSegue.sourceViewController;
+    // Use data from the view controller which initiated the unwind segue
+    
+    // has this property been implemented
+    if ([sourceViewController respondsToSelector:@selector(noteArray)]){ //dont foget to import the corresponding VCheader
+        // i know that i am coming back from the pink view controller
+        NSLog(@"Returned from NoteCategoryView");
+    }else if([sourceViewController respondsToSelector:@selector(note)]){
+        
+    }
+};
+
+
+
 
 //#pragma mark - Table view data source
 //

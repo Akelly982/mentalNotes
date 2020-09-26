@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeTableViewCell : UITableViewCell
+@interface NoteTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *moodImageView;
 

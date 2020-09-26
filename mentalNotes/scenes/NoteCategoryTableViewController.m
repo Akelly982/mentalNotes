@@ -1,26 +1,19 @@
 //
-//  HomeTableViewController.m
+//  NoteCategoryTableViewController.m
 //  mentalNotes
 //
-//  Created by Aidan Kelly on 12/9/20.
+//  Created by Aidan Kelly on 26/9/20.
 //  Copyright © 2020 Aidan Kelly. All rights reserved.
 //
 
-#import "HomeTableViewController.h"
-#import "BlueViewController.h"
-#import "ShowNoteTableViewController.h"
+#import "NoteCategoryTableViewController.h"
+#import "ShowNoteTableViewController2.h"
 
-
-@interface HomeTableViewController ()
+@interface NoteCategoryTableViewController ()
 
 @end
 
-@implementation HomeTableViewController
-
-    //****************NOTES VALUE REF****************
-        // numGoodNotes  == else
-        // numAverageNotes <=6
-        // numWorseNotes <=4
+@implementation NoteCategoryTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,14 +24,11 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    DbManager* db = [[DbManager alloc]init];
-    _homeData = [db getNotesRecent:10];
+    // get colors
+    _color = [[myColors alloc]init];
     
-    //_homeData = @[@"note title", @"note xyz",@"noteIloc",@"notey note note",@"floaty mc float float"];
-    
-    _colors = [[myColors alloc]init];
-    //test usingColor
-    //[[self colors] myRed];
+    // set category label
+    [_categoryTitleLabel setText:_myCategory];
     
     
 }
@@ -47,14 +37,16 @@
 
 // SETTING UP UNWIND
 //*sourceViewController is where you are coming back from
-- (IBAction)unwindToHomeVc:(UIStoryboardSegue *)unwindSegue {
+- (IBAction)unwindToNotesCategoryVc:(UIStoryboardSegue *)unwindSegue {
     UIViewController *sourceViewController = unwindSegue.sourceViewController;
     // Use data from the view controller which initiated the unwind segue
-
+    
     // has this property been implemented
-    if ([sourceViewController respondsToSelector:@selector(methodInBlue)]){ //dont foget to import the corresponding VCheader
-    // i know that i am coming back from the pink view controller
-    NSLog(@"Returned from Blue VC");
+    if ([sourceViewController respondsToSelector:@selector(noteArray)]){ //dont foget to import the corresponding VCheader
+        // i know that i am coming back from the pink view controller
+        NSLog(@"Returned from NoteCategoryView");
+    }else if([sourceViewController respondsToSelector:@selector(note)]){
+        
     }
 };
 
@@ -62,75 +54,46 @@
 
 
 
-
-
 #pragma mark - Table view data source
 
-// number of tables you are trying to show
-    // homeData == 1
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-        //warning Incomplete implementation, return the number of sections
+//warning Incomplete implementation, return the number of sections
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-        //warning Incomplete implementation, return the number of rows
-    return [_homeData count];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{ //warning Incomplete implementation, return the number of rows
+    return [_noteArray count];
 }
 
-// Main method to display each row
-// called per row
-// NSIndexPath is a class that among other things has the row the user
-//              has selected.  (the row we are working with now == index path)
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // get the identifier for the cell
-    static NSString* myCellIdenifier = @"homeCell";
+    //cell id
+    NSString* cellId = @"noteCell";
     
-    NoteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:myCellIdenifier forIndexPath:indexPath];
+    NoteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     
     // Configure the cell...
     if (cell == nil){  // if it is a new cell (not yet loaded)
         // init with default sytle and cellId
-        cell = [[NoteTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:myCellIdenifier];
+        cell = [[NoteTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
-    // add data
-    // cell class already exists
-    //      cell              set text using _dataArray at current indexPath (which row we are at)
-//    [[cell textLabel] setText:[[_homeData objectAtIndex:[indexPath row]] getNote]];
     
-    [[cell noteLabel] setText:[[_homeData objectAtIndex:[indexPath row]] getNote]];
-    
-    
-    [[cell dateLabel] setText:[[_homeData objectAtIndex:[indexPath row]] getDateAsNSString]];
-    
+    //add data
+    [[cell noteLabel] setText:[[_noteArray objectAtIndex:[indexPath row]] getNote]];
+    [[cell dateLabel] setText:[[_noteArray objectAtIndex:[indexPath row]] getDateAsNSString]];
     //moodImage setBKG expects a UIColor
-    int myMood = [[_homeData objectAtIndex:[indexPath row]] getMood];
+    int myMood = [[_noteArray objectAtIndex:[indexPath row]] getMood];
     if (myMood <= 4){
-        [[cell moodImageView] setBackgroundColor: [[self colors]myRed]];
+        [[cell moodImageView] setBackgroundColor: [[self color]myRed]];
     }else if (myMood <= 6){
-        [[cell moodImageView] setBackgroundColor: [[self colors]myBlue]];
+        [[cell moodImageView] setBackgroundColor: [[self color]myBlue]];
     }else {
-        [[cell moodImageView] setBackgroundColor: [[self colors]myGreen]];
+        [[cell moodImageView] setBackgroundColor: [[self color]myGreen]];
     }
-    
-    
     
     return cell;
-    
-//
-    
 }
-
-
-    //@@This row needs to be added in by on your own@@
-    // user selected a row and this is which one it is
-    // what will hapen when the user taps this row
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    NSLog(@"Row selected - num row is: %li", (long)[indexPath row]);
-//    _selectedNote = [_homeData objectAtIndex:[indexPath row]];
-//}
-
 
 
 
@@ -143,24 +106,20 @@
     
     
 //    if ([myObject isKindOfClass:[AnObject class]])
-    if([[segue destinationViewController] isKindOfClass:[ShowNoteTableViewController class]]){
-        NSLog(@"Segueing to ShowNote !");
+    if([[segue destinationViewController] isKindOfClass:[ShowNoteTableViewController2 class]]){
+        NSLog(@"Segueing to ShowNote2");
         //get the contact from the table view (don't forget to create the outlet for contactsTableView in the ContactsTableViewController.h)
-        NSInteger selectedRow = [[[self homeTableView] indexPathForSelectedRow] row]; //use tableView to get row selected
-        _selectedNote = [[self homeData] objectAtIndex:selectedRow];
+        NSInteger selectedRow = [[[self noteTableView] indexPathForSelectedRow] row]; //use tableView to get row selected
+        _selectedNote = [[self noteArray] objectAtIndex:selectedRow];
+        NSLog(@"Note text: %@", [_selectedNote getNote]);
         //get the destination view controller
-        ShowNoteTableViewController* showNoteTableViewController = [segue destinationViewController];
-        [showNoteTableViewController setNote:_selectedNote]; // note in next view = selectedNote
+        ShowNoteTableViewController2* showNoteTVC2 = [segue destinationViewController];
+        [showNoteTVC2 setNote:_selectedNote]; // note in next vc = selectedNote
         
     }
         
     
 }
-
-
-
-
-
 
 
 /*

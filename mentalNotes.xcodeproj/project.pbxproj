@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C4734E4D25186FF90026FA20 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4734E4C25186FF90026FA20 /* HomeTableViewCell.m */; };
+		C4734E4D25186FF90026FA20 /* NoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4734E4C25186FF90026FA20 /* NoteTableViewCell.m */; };
 		C917E728250DC6C600FD38D5 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = C917E727250DC6C600FD38D5 /* Note.m */; };
 		C917E739250E003400FD38D5 /* FirstStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C917E738250E003400FD38D5 /* FirstStartViewController.m */; };
 		C917E73C250E004B00FD38D5 /* FirstStart2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C917E73B250E004B00FD38D5 /* FirstStart2ViewController.m */; };
@@ -18,7 +18,6 @@
 		C96AB70F250C69710004761E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C96AB70E250C69710004761E /* AppDelegate.m */; };
 		C96AB712250C69710004761E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C96AB711250C69710004761E /* SceneDelegate.m */; };
 		C96AB718250C69710004761E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C96AB716250C69710004761E /* Main.storyboard */; };
-		C96AB71A250C69730004761E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C96AB719250C69730004761E /* Assets.xcassets */; };
 		C96AB71D250C69730004761E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C96AB71B250C69730004761E /* LaunchScreen.storyboard */; };
 		C96AB720250C69730004761E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C96AB71F250C69730004761E /* main.m */; };
 		C96AB72A250C69730004761E /* mentalNotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C96AB729250C69730004761E /* mentalNotesTests.m */; };
@@ -30,6 +29,9 @@
 		C96AB754250C76400004761E /* MainUITabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96AB753250C76400004761E /* MainUITabBarController.m */; };
 		C96E90B4251DDBE8008935EB /* ShowNoteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96E90B3251DDBE8008935EB /* ShowNoteTableViewController.m */; };
 		C96E90BA251DE745008935EB /* myColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C96E90B9251DE745008935EB /* myColors.m */; };
+		C96E90C6251EDE2A008935EB /* NoteCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96E90C5251EDE2A008935EB /* NoteCategoryTableViewController.m */; };
+		C96E90D5251EFA3A008935EB /* ShowNoteTableViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = C96E90D4251EFA3A008935EB /* ShowNoteTableViewController2.m */; };
+		C96E90DC251F1EF9008935EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C96AB719250C69730004761E /* Assets.xcassets */; };
 		C9CEA6EF25145D83004611A7 /* DbManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CEA6EE25145D83004611A7 /* DbManager.m */; };
 		C9CEA6F225145DBC004611A7 /* TempDb.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CEA6F125145DBC004611A7 /* TempDb.m */; };
 /* End PBXBuildFile section */
@@ -52,8 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C4734E4B25186FF90026FA20 /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
-		C4734E4C25186FF90026FA20 /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		C4734E4B25186FF90026FA20 /* NoteTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteTableViewCell.h; sourceTree = "<group>"; };
+		C4734E4C25186FF90026FA20 /* NoteTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteTableViewCell.m; sourceTree = "<group>"; };
 		C917E726250DC6C600FD38D5 /* Note.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		C917E727250DC6C600FD38D5 /* Note.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		C917E72D250DCB6200FD38D5 /* Note+PrivateProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Note+PrivateProperty.h"; sourceTree = "<group>"; };
@@ -99,6 +101,10 @@
 		C96E90B3251DDBE8008935EB /* ShowNoteTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowNoteTableViewController.m; sourceTree = "<group>"; };
 		C96E90B8251DE745008935EB /* myColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = myColors.h; sourceTree = "<group>"; };
 		C96E90B9251DE745008935EB /* myColors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = myColors.m; sourceTree = "<group>"; };
+		C96E90C4251EDE2A008935EB /* NoteCategoryTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoteCategoryTableViewController.h; sourceTree = "<group>"; };
+		C96E90C5251EDE2A008935EB /* NoteCategoryTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteCategoryTableViewController.m; sourceTree = "<group>"; };
+		C96E90D3251EFA3A008935EB /* ShowNoteTableViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowNoteTableViewController2.h; sourceTree = "<group>"; };
+		C96E90D4251EFA3A008935EB /* ShowNoteTableViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowNoteTableViewController2.m; sourceTree = "<group>"; };
 		C9CEA6ED25145D83004611A7 /* DbManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DbManager.h; sourceTree = "<group>"; };
 		C9CEA6EE25145D83004611A7 /* DbManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DbManager.m; sourceTree = "<group>"; };
 		C9CEA6F025145DBC004611A7 /* TempDb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TempDb.h; sourceTree = "<group>"; };
@@ -133,8 +139,8 @@
 		C4734E4A25186F800026FA20 /* cellClasses */ = {
 			isa = PBXGroup;
 			children = (
-				C4734E4B25186FF90026FA20 /* HomeTableViewCell.h */,
-				C4734E4C25186FF90026FA20 /* HomeTableViewCell.m */,
+				C4734E4B25186FF90026FA20 /* NoteTableViewCell.h */,
+				C4734E4C25186FF90026FA20 /* NoteTableViewCell.m */,
 			);
 			path = cellClasses;
 			sourceTree = "<group>";
@@ -250,6 +256,10 @@
 				C917E741250E006C00FD38D5 /* CreateNote2ViewController.m */,
 				C96E90B2251DDBE8008935EB /* ShowNoteTableViewController.h */,
 				C96E90B3251DDBE8008935EB /* ShowNoteTableViewController.m */,
+				C96E90C4251EDE2A008935EB /* NoteCategoryTableViewController.h */,
+				C96E90C5251EDE2A008935EB /* NoteCategoryTableViewController.m */,
+				C96E90D3251EFA3A008935EB /* ShowNoteTableViewController2.h */,
+				C96E90D4251EFA3A008935EB /* ShowNoteTableViewController2.m */,
 			);
 			path = scenes;
 			sourceTree = "<group>";
@@ -379,7 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C96AB71D250C69730004761E /* LaunchScreen.storyboard in Resources */,
-				C96AB71A250C69730004761E /* Assets.xcassets in Resources */,
+				C96E90DC251F1EF9008935EB /* Assets.xcassets in Resources */,
 				C96AB718250C69710004761E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,8 +427,10 @@
 				C917E739250E003400FD38D5 /* FirstStartViewController.m in Sources */,
 				C9CEA6EF25145D83004611A7 /* DbManager.m in Sources */,
 				C9605FA82516CB500044A2A5 /* RedViewController.m in Sources */,
-				C4734E4D25186FF90026FA20 /* HomeTableViewCell.m in Sources */,
+				C96E90C6251EDE2A008935EB /* NoteCategoryTableViewController.m in Sources */,
+				C4734E4D25186FF90026FA20 /* NoteTableViewCell.m in Sources */,
 				C9CEA6F225145DBC004611A7 /* TempDb.m in Sources */,
+				C96E90D5251EFA3A008935EB /* ShowNoteTableViewController2.m in Sources */,
 				C917E73F250E005F00FD38D5 /* CreateNoteViewController.m in Sources */,
 				C96AB751250C6D1A0004761E /* NotesTableViewController.m in Sources */,
 				C96AB74E250C6D080004761E /* HomeTableViewController.m in Sources */,

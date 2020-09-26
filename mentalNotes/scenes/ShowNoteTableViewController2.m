@@ -1,19 +1,19 @@
 //
-//  ShowNoteTableViewController.m
+//  ShowNoteTableViewController2.m
 //  mentalNotes
 //
-//  Created by Aidan Kelly on 25/9/20.
+//  Created by Aidan Kelly on 26/9/20.
 //  Copyright © 2020 Aidan Kelly. All rights reserved.
 //
 
-#import "ShowNoteTableViewController.h"
-#import "HomeTableViewController.h"
+#import "ShowNoteTableViewController2.h"
 #import "DbManager.h"
-@interface ShowNoteTableViewController ()
+
+@interface ShowNoteTableViewController2 ()
 
 @end
 
-@implementation ShowNoteTableViewController
+@implementation ShowNoteTableViewController2
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,14 +53,12 @@
 }
 
 
-- (IBAction)onDeleteBtnTouchUpInside:(id)sender {
-    NSLog(@"Delete btn hit");
+- (IBAction)onDeleteBtnTouchUpInside2:(id)sender {
     DbManager* db = [[DbManager alloc]init];
     [db deleteNote:_note];
 }
 
-- (IBAction)onUpdateBtnTouchUpInside:(id)sender {
-    NSLog(@"Update btn hit");
+- (IBAction)onUpdateButtonTouchUpInside2:(id)sender {
     //update note
     [_note setAdvisor1:[_advisor1Switch isOn]];  //returns bool depending if on or off
     [_note setAdvisor2:[_advisor2Switch isOn]];
@@ -69,8 +67,6 @@
     DbManager* db = [[DbManager alloc]init];
     [db updateNote:_note];
 }
-
-
 
 
 //#pragma mark - Table view data source
@@ -111,7 +107,7 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
 */
 
