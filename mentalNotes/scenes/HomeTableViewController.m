@@ -31,10 +31,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    DbManager* db = [[DbManager alloc]init];
-    _homeData = [db getNotesRecent:10];
+    _db = [[DbManager alloc]init];
+    _homeData = [_db getNotesRecent:10];
     
-    //_homeData = @[@"note title", @"note xyz",@"noteIloc",@"notey note note",@"floaty mc float float"];
     
     _colors = [[myColors alloc]init];
     //test usingColor
@@ -50,7 +49,12 @@
 - (IBAction)unwindToHomeVc:(UIStoryboardSegue *)unwindSegue {
     UIViewController *sourceViewController = unwindSegue.sourceViewController;
     // Use data from the view controller which initiated the unwind segue
-
+    
+    // if i come back from somewhere get notesArray again. it should have changed
+    _homeData = [_db getNotesRecent:10];
+    // then reload the tableView
+    [self.tableView reloadData];
+    
     // has this property been implemented
     if ([sourceViewController respondsToSelector:@selector(methodInBlue)]){ //dont foget to import the corresponding VCheader
     // i know that i am coming back from the pink view controller

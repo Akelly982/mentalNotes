@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Note.h"
 #import "TempDb.h"
+#import "MySQLDatabase.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @property TempDb* myDb;
-
+@property MySQLDatabase* sqlDb;
 
 // userAccount
 - (BOOL) getAccountExists;
@@ -39,9 +40,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray*) getNotesAdvisor1;
 - (NSArray*) getNotesAdvisor2;
 
-- (void) addNote : (Note*) noteToAdd;
-- (void) deleteNote : (Note*) noteToDelete;
-- (void) updateNote : (Note*) noteToUpdate;
+- (NSString*) addNote : (Note*) noteToAdd;
+- (NSString*) deleteNote : (Note*) noteToDelete;
+- (NSString*) updateNote : (Note*) noteToUpdate;
 
 
 

@@ -39,9 +39,11 @@ NS_ASSUME_NONNULL_BEGIN
 -(void) setDate: (NSDate*)date;
 
 -(bool)getAdvisor1;
+-(int)getAdvisor1IntValue;
 -(void)setAdvisor1:(bool)boolVal;
 
 -(bool)getAdvisor2;
+-(int)getAdvisor2IntValue;
 -(void)setAdvisor2:(bool)boolVal;
 
 

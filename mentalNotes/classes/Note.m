@@ -101,7 +101,7 @@
     
     // use formatter to convert date
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-    [formatter setDateFormat:@"dd:MM:YYYY"];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     // user formatter to set to date
     holder = [formatter stringFromDate:_date];
     
@@ -113,6 +113,17 @@
 -(bool)getAdvisor1{
     return _advisor1;
 }
+
+- (int)getAdvisor1IntValue{
+    // 0 == false
+    // 1 == true
+    if (_advisor1){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
 -(void)setAdvisor1:(bool)boolVal{
     _advisor1 = boolVal;
 }
@@ -120,6 +131,17 @@
 -(bool)getAdvisor2{
     return _advisor2;
 }
+
+- (int)getAdvisor2IntValue{
+    // 0 == false
+    // 1 == true
+    if (_advisor2){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
 -(void)setAdvisor2:(bool)boolVal{
     _advisor2 = boolVal;
 }

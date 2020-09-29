@@ -15,6 +15,18 @@
 
 @implementation CreateNote2ViewController
 
+-(void) showUIAlertWithMessage:(NSString*) message andTitle:(NSString*)title{
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//            NSLog(@"You have saved the planet");
+        }];
+        [alert addAction:okAction];
+    
+        [self presentViewController:alert animated:YES completion:^{
+            NSLog(@"%@", message);
+        }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -22,9 +34,10 @@
     NSLog(@"%@",_userNote); //this is set on segue
     _currentDate = [NSDate date];  // should get current date and time
     
-    // convert current date to just date
+    // convert current date to just date no time and set format
     NSDateFormatter* dateFormater = [[NSDateFormatter alloc]init];
-    [dateFormater setDateFormat:@"dd/MM/yyyy"];
+    [dateFormater setDateFormat:@"yyyy-MM-dd HH:mm"];  //needs to be in this shape to work with db
+                                                 // this is also set when getting the date from the NOTE
     //convert date to string to get correct format
     NSString* myDateStr = [dateFormater stringFromDate:_currentDate];
     //convert string back into date datatype with the correct format;
@@ -73,8 +86,13 @@
     DbManager* db = [[DbManager alloc]init];
     
     //send to db
-    [db addNote:newNote];
+    NSString* result = [db addNote:newNote];
+    NSLog(@"%@",result);
+    //show alert with result (issues with unwind segue  shows then disapears due to VC change)
+    //[self showUIAlertWithMessage:result andTitle:@"Database"];
 }
+
+
 
 
 

@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeTableViewController : UITableViewController
 
+
+@property DbManager* db;
 @property NSArray* homeData;
 @property Note* selectedNote;
 @property myColors* colors;

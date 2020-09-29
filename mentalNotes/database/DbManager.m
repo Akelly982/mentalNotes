@@ -17,6 +17,7 @@
     self = [super init];
     if (self) {
         _myDb = [[TempDb alloc]init];
+        _sqlDb = [[MySQLDatabase alloc]init];
     }
     return self;
 }
@@ -28,8 +29,9 @@
     NSArray* myArray = [[NSArray alloc]init];
     
     // get from temp Db
-    myArray = [_myDb getNotes];
+    //myArray = [_myDb getNotes];
     
+    myArray = [_sqlDb getNotesAllNotesByRecent];
     
     return myArray;
 }
@@ -38,7 +40,9 @@
     NSArray* myArray = [[NSArray alloc]init];
     
     // get from temp Db
-    myArray = [_myDb getNotesRecent:numItems];
+    //myArray = [_myDb getNotesRecent:numItems];
+    
+    myArray = [_sqlDb getNotesRecent:numItems];
     
     return myArray;
 }
@@ -47,8 +51,9 @@
     NSArray* myArray = [[NSArray alloc]init];
     
     // get from temp Db
-    myArray = [_myDb getNotesGood];
+    //myArray = [_myDb getNotesGood];
     
+    myArray = [_sqlDb getNotesGood];
     
     return myArray;
 }
@@ -57,8 +62,9 @@
     NSArray* myArray = [[NSArray alloc]init];
     
     // get from temp Db
-    myArray = [_myDb getNotesAverage];
+    //myArray = [_myDb getNotesAverage];
     
+    myArray = [_sqlDb getNotesAverage];
     
     return myArray;
 }
@@ -67,8 +73,9 @@
     NSArray* myArray = [[NSArray alloc]init];
     
     // get from temp Db
-    myArray = [_myDb getNotesWorse];
+    //myArray = [_myDb getNotesWorse];
     
+    myArray = [_sqlDb getNotesWorse];
     
     return myArray;
 }
@@ -77,8 +84,9 @@
     NSArray* myArray = [[NSArray alloc]init];
     
     // get from temp Db
-    myArray = [_myDb getNotesAdvisor1];
+    //myArray = [_myDb getNotesAdvisor1];
     
+    myArray = [_sqlDb getNotesAdvisor1];
     
     return myArray;
 }
@@ -87,8 +95,9 @@
     NSArray* myArray = [[NSArray alloc]init];
     
     // get from temp Db
-    myArray = [_myDb getNotesAdvisor2];
+    //myArray = [_myDb getNotesAdvisor2];
     
+    myArray = [_sqlDb getNotesAdvisor2];
     
     return myArray;
 }
@@ -99,20 +108,29 @@
 
 
 // add New Note
-- (void)addNote:(Note *)noteToAdd{
-    [_myDb addNote:noteToAdd];
+- (NSString*)addNote:(Note *)noteToAdd{
+    NSString* returnMsg = [[NSString alloc]init];
+    //[_myDb addNote:noteToAdd];
+    returnMsg = [_sqlDb addNote:noteToAdd];
+    return returnMsg;
 }
 
 
 //update note
-- (void)updateNote:(Note *)noteToUpdate{
-    [_myDb updateNote:noteToUpdate];
+- (NSString*)updateNote:(Note *)noteToUpdate{
+    NSString* returnMsg = [[NSString alloc]init];
+    //[_myDb updateNote:noteToUpdate];
+    returnMsg = [_sqlDb updateNote:noteToUpdate];
+    return returnMsg;
 }
 
 
 //delete note
-- (void)deleteNote:(Note *)noteToDelete{
-    [_myDb deleteNote:noteToDelete];
+- (NSString*)deleteNote:(Note *)noteToDelete{
+    NSString* returnMsg = [[NSString alloc]init];
+    //[_myDb deleteNote:noteToDelete];
+    returnMsg = [_sqlDb deleteNote:noteToDelete];
+    return returnMsg;
 }
 
 
