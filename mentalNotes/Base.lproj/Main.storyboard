@@ -1391,8 +1391,8 @@
                                                         <segue destination="k0N-ur-TUy" kind="unwind" unwindAction="unwindToHomeVc:" id="RAw-tN-hkf"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAS-WY-VBy">
-                                                    <rect key="frame" x="153" y="11" width="69.5" height="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAS-WY-VBy">
+                                                    <rect key="frame" x="143" y="11" width="88" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
@@ -1614,7 +1614,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sOK-0f-SBy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="k0N-ur-TUy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1540" y="2095"/>
+            <point key="canvasLocation" x="1540" y="2094.6026986506749"/>
         </scene>
         <!--Show Note Table View Controller2-->
         <scene sceneID="mRT-8o-yOM">
@@ -1642,7 +1642,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqW-Y1-l0M">
-                                                    <rect key="frame" x="153" y="11" width="69.5" height="30"/>
+                                                    <rect key="frame" x="153" y="11" width="69" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
